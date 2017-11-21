@@ -5,10 +5,10 @@ const mysql = require('mysql');
 var server = express();
 
 var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'VVLsOATL_s_L3G',
-  database : 'uran'
+  host     : 'localhost:3306',
+  user     : 'u0407_cgs',
+  password : 'lL6lt0_3',
+  database : 'u0407386_server_bd'
 });
 
 connection.connect();
