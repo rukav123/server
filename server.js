@@ -15,5 +15,5 @@ server.listen('3000', function () {
 })
 
 sok.on('connection', function (socket) {
-    console.log('Новое подключение');
+    console.log('Новое подключениеУраа!');
 });
