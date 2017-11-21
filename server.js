@@ -1,8 +1,16 @@
 var express = require('express');
 var body = require('body-parser');
 var sok = require('socket.io')(3001);
+const mysql = require('mysql');
 var server = express();
 
+var connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'uran',
+  password : 'VVLsOATL_s_L3G'
+});
+
+console.log(connection);
 server.get('/', function (requier, response) {
     response.send('Если вы видите эту надпись, то это значит, что сервер запущен и работает!!!');
 });
