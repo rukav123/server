@@ -10,8 +10,7 @@ server.get('/', function (requier, response) {
 
 server.listen('3000', function () {
     console.log('ПУСК!');
-})
-
+});
 sok.on('connection', function (socket) {
     socket.send('Добро пожаловать!');
         socket.on('message', function(data){
