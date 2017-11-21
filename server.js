@@ -12,7 +12,7 @@ server.listen('3000', function () {
     console.log('ПУСК!');
 });
 sok.on('connection', function (socket) {
-    socket.send('Добро пожаловать!');
+    socket.send('Все знают что Андрей не купил Данилу мясо!');
         socket.on('message', function(data){
         socket.broadcast.send(data);
     });
