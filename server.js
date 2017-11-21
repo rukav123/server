@@ -5,6 +5,7 @@ var server = express();
 
 server.get('/', function (requier, response) {
     response.send('123');
+    respons.headers('Access-Control-Allow-Origin');
 });
 server.get('/piple/:id', function (requier, response) {
     response.send(piple);
@@ -15,5 +16,8 @@ server.listen('3000', function () {
 })
 
 sok.on('connection', function (socket) {
-    console.log('Новое подключениеУраа!');
+    socket.send('Добро пожаловать!');
+        socket.on('message', function(data){
+        socket.broadcast.send(data);
+    });
 });
