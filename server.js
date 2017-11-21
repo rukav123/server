@@ -6,11 +6,13 @@ var server = express();
 
 var connection = mysql.createConnection({
   host     : 'localhost',
-  user     : 'uran',
-  password : 'VVLsOATL_s_L3G'
+  user     : 'root',
+  password : 'VVLsOATL_s_L3G',
+  database : 'uran'
 });
 
-console.log(connection);
+connection.connect();
+console.log('Ок');
 
 server.listen('3000', function () {
     console.log('ПУСК!');
