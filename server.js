@@ -4,7 +4,7 @@ var sok = require('socket.io')(3001);
 var server = express();
 
 server.get('/', function (requier, response) {
-    response.send('Если вы видите эту надпись, то это значит, что сервер запущен и работает!');
+    response.send('Если вы видите эту надпись, то это значит, что сервер запущен и работает!!!');
 });
 
 
