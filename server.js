@@ -4,7 +4,7 @@ var sok = require('socket.io')(3001);
 var server = express();
 
 server.get('/', function (requier, response) {
-    response.send('123');
+    response.send('Если вы видите эту надпись, то это значит, что сервер запущен и работает!');
     respons.headers('Access-Control-Allow-Origin');
 });
 server.get('/piple/:id', function (requier, response) {
