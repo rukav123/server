@@ -19,8 +19,5 @@ sok.on('connection', function (socket) {
     socket.send('Добро пожаловать!');
         socket.on('message', function(data){
         socket.broadcast.send(data);
-        socket.broadcast.send(data);
-        socket.broadcast.send(data);
-        socket.broadcast.send(data);
     });
 });
