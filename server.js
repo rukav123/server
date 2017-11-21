@@ -5,10 +5,6 @@ var server = express();
 
 server.get('/', function (requier, response) {
     response.send('Если вы видите эту надпись, то это значит, что сервер запущен и работает!');
-    respons.headers('Access-Control-Allow-Origin');
-});
-server.get('/piple/:id', function (requier, response) {
-    response.send(piple);
 });
 
 server.listen('3000', function () {
@@ -16,7 +12,7 @@ server.listen('3000', function () {
 })
 
 sok.on('connection', function (socket) {
-    socket.send('Добро пожаловать.');
+    socket.send('Добро пожаловать!');
         socket.on('message', function(data){
         socket.broadcast.send(data);
     });
