@@ -11,10 +11,6 @@ var connection = mysql.createConnection({
 });
 
 console.log(connection);
-server.get('/', function (requier, response) {
-    response.send('Если вы видите эту надпись, то это значит, что сервер запущен и работает!!!');
-});
-
 
 server.listen('3000', function () {
     console.log('ПУСК!');
