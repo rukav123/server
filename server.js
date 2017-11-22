@@ -28,7 +28,7 @@ sok.on('connection', function (socket) {
               var user = connection.query("SELECT * FROM `user`", function(error, result, f){
                 if(!(error)){
                   for (var i = 0; i < count; i++) {
-                    socket.broadcast.send(result[i]['login']+data);
+                    socket.broadcast.send(result[i]['login']+data+' -');
                     console.log(result[i]['login']);
                   }
                 }
