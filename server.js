@@ -29,7 +29,7 @@ sok.on('connection', function (socket) {
                 if(!(error)){
                   for (var i = 0; i < count; i++) {
 
-                    var msg = result[i]['login']+data+' -';
+                    var msg = result[i]['login']+": "+data;
                     socket.broadcast.send(msg);
                     console.log(msg);
                   }
