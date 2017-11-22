@@ -6,9 +6,9 @@ var server = express();
 
 var connection = mysql.createConnection({
   host     : 'localhost',
-  user     : 'root',
+  user     : 'gus',
   password : '1aMhqL8XrS',
-  socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
+  database : 'my_base'
 });
 
 connection.connect();
