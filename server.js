@@ -8,7 +8,6 @@ var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'uran',
   password : 'VVLsOATL_s_L3G',
-  database : 'uran'
 });
 
 connection.connect();
