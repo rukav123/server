@@ -26,7 +26,7 @@ sok.on('connection', function (socket) {
 
     socket.on('message', function(data){
       var pred_msg = JSON.parse(data);
-      if(pred_msg.type){
+      if(pred_msg.type == "chat_message"){
         socket.broadcast.send(pred_msg.message);
       }
 
