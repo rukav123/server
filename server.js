@@ -27,7 +27,12 @@ sok.on('connection', function (socket) {
     socket.on('message', function(data){
       var pred_msg = JSON.parse(data);
       if(pred_msg.type == "chat_message"){
-        socket.broadcast.send(pred_msg.message);
+        var send = '{"type" : "chat_message", "message" : "'+pred_msg.message+'"}'
+        socket.broadcast.send(send);
+      }
+      else if(pred_msg.type == "online_message"){
+        var send = '{"type" : "online_message", "message" : "'+pred_msg.message+'"}'
+        socket.broadcast.send(send);
       }
 
 
