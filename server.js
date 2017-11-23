@@ -32,7 +32,7 @@ sok.on('connection', function (socket) {
       }
       else if(pred_msg.type == "online_message"){
         var send = '{"type" : "online_message", "message" : "'+pred_msg.message+'"}';
-        socket.send(send);
+        socket.broadcast.send(send);
       }
 
 
