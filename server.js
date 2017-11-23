@@ -26,7 +26,7 @@ sok.on('connection', function (socket) {
 
     socket.on('message', function(data){
       var pred_msg = JSON.parse(data);
-      var msg = result[i]['login']+": "+pred_msg;
+      var msg = ['login']+": "+pred_msg;
       socket.broadcast.send(msg);
       console.log(msg);
 
