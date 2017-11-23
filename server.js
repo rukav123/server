@@ -21,10 +21,10 @@ server.listen('3000', function () {
 });
 sok.on('connection', function (socket) {
     socket.send('Все знают что Андрей не купил Данилу мясо!');
-        socket.on('message', function(data){
-                    var pred_msg = JSON.parse(data);
-                    var msg = result[i]['login']+": "+pred_msg;
-                    socket.broadcast.send(msg);
-                    console.log(msg);
-        });
+    socket.on('message', function(data){
+      var pred_msg = JSON.parse(data);
+      var msg = result[i]['login']+": "+pred_msg;
+      socket.broadcast.send(msg);
+      console.log(msg);
+    });
 });
