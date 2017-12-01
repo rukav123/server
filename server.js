@@ -45,7 +45,7 @@ sok.on('connection', function (socket) {
         var send_l = '{"type" : "click_message_local", "message" : "'+local_click+'"}';
         var send = '{"type" : "click_message", "message" : "'+click+'"}';
         socket.send(send_l);
-        socket.send(send);
+        sok.send(send);
       }
 
 
