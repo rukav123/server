@@ -43,8 +43,8 @@ sok.on('connection', function (socket) {
         var send = '{"type" : "click_message", "message" : "'+click+'"}';
         console.log(send_l);
         console.log(send);
-        socket.broadcast.send(send_l);
-        socket.broadcast.send(send);
+        socket.send(send_l);
+        socket.send(send);
       }
 
 
