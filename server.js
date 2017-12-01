@@ -23,8 +23,11 @@ server.listen('3000', function () {
 var click = 0;
 
 sok.on('connection', function (socket) {
-  var local_click = 0;
+    var local_click = 0;
+
     socket.send('{"type" : "chat_message", "message" : "Добро подажаловать! Андрей купи мясо..., уже не надо!"}');
+    socket.send('{"type" : "click_message_local", "message" : "'+local_click+'"}');
+    socket.send('{"type" : "click_message", "message" : "'+click+'"}');
 
     socket.on('message', function(data){
       var pred_msg = JSON.parse(data);
@@ -41,8 +44,6 @@ sok.on('connection', function (socket) {
         click++;
         var send_l = '{"type" : "click_message_local", "message" : "'+local_click+'"}';
         var send = '{"type" : "click_message", "message" : "'+click+'"}';
-        console.log(send_l);
-        console.log(send);
         socket.send(send_l);
         socket.send(send);
       }
