@@ -41,6 +41,8 @@ sok.on('connection', function (socket) {
         click++;
         var send_l = '{"type" : "click_message_local", "message" : "'+local_click+'"}';
         var send = '{"type" : "click_message", "message" : "'+click+'"}';
+        console.log(send_l);
+        console.log(send);
         socket.broadcast.send(send_l);
         socket.broadcast.send(send);
       }
