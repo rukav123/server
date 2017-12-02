@@ -64,7 +64,7 @@ sok.on('connection', function (socket) {
     });
     socket.on('disconnect', function(){
       console.log("player"+playerName);
-      delete playerData[(playerName-1)];
+      playerData[(playerName-1)] = none;
       console.log(playerData);
       var send = '{"type" : "delete_user", "message" : "player'+playerName+'", "playerID" : "'+playerName+'"}';
       socket.broadcast.send(send);
