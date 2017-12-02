@@ -43,8 +43,8 @@ sok.on('connection', function (socket) {
         var send = '{"type" : "online_message", "message" : "'+pred_msg.message+'"}';
         socket.broadcast.send(send);
       }
-      else if(pred_msg.type == "posPlayer"){
-        var send = '{"type" : "online_message", "message" : "'+pred_msg.message+'"}';
+      else if(pred_msg.type == "positions"){
+        var send = '{"type" : "posPlayer", "messageX" : "'+pred_msg.messageX+'", "messageY" : "'+pred_msg.messageY+'", "messageID" : "'+pred_msg.messageID+'"}';
         socket.broadcast.send(send);
       }
       else if(pred_msg.type == "click_message"){
