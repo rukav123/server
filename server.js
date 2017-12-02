@@ -61,8 +61,9 @@ sok.on('connection', function (socket) {
 
 
     });
-});
 
-sok.on('disconnect', function(socket){
-  console.log('Кто то вышел');
-})
+
+    sok.on('disconnect', function(socket){
+      console.log('Кто то вышел');
+    })
+});
