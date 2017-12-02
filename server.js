@@ -26,6 +26,7 @@ var playerData = [];
 
 sok.on('connection', function (socket) {
     var local_click = 0;
+    var playerName = playerID;
 
     socket.send('{"type" : "chat_message", "message" : "Добро подажаловать! Андрей купи мясо..., уже не надо!"}');
     socket.send('{"type" : "click_message_local", "message" : "'+local_click+'"}');
@@ -62,6 +63,8 @@ sok.on('connection', function (socket) {
 
     });
     socket.on('disconnect', function(){
-      console.log('Кто то вышел');
+      console.log("player"+playerName);
+      playerData[playerName] = null;
+      console.log(playerData);
     });
 });
