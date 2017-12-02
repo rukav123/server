@@ -21,6 +21,7 @@ server.listen('3000', function () {
 });
 
 var click = 0;
+var playerID = 1;
 
 sok.on('connection', function (socket) {
     var local_click = 0;
@@ -28,7 +29,8 @@ sok.on('connection', function (socket) {
     socket.send('{"type" : "chat_message", "message" : "Добро подажаловать! Андрей купи мясо..., уже не надо!"}');
     socket.send('{"type" : "click_message_local", "message" : "'+local_click+'"}');
     socket.send('{"type" : "click_message", "message" : "'+click+'"}');
-    socket.broadcast.send('{"type" : "add_player", "message" : ""}');
+    socket.broadcast.send('{"type" : "add_player", "messageID" : "'+playerID+'"}');
+    playerID++;
 
     socket.on('message', function(data){
       var pred_msg = JSON.parse(data);
@@ -37,6 +39,10 @@ sok.on('connection', function (socket) {
         socket.broadcast.send(send);
       }
       else if(pred_msg.type == "online_message"){
+        var send = '{"type" : "online_message", "message" : "'+pred_msg.message+'"}';
+        socket.broadcast.send(send);
+      }
+      else if(pred_msg.type == "posPlayer"){
         var send = '{"type" : "online_message", "message" : "'+pred_msg.message+'"}';
         socket.broadcast.send(send);
       }
