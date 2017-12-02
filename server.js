@@ -64,7 +64,7 @@ sok.on('connection', function (socket) {
     });
     socket.on('disconnect', function(){
       console.log("player"+playerName);
-      playerData[playerName] = null;
+      playerData[(playerName-1)] = undefined;
       console.log(playerData);
     });
 });
