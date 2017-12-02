@@ -31,7 +31,7 @@ sok.on('connection', function (socket) {
     socket.send('{"type" : "click_message_local", "message" : "'+local_click+'"}');
     socket.send('{"type" : "click_message", "message" : "'+click+'"}');
     socket.broadcast.send('{"type" : "add_player", "messageID" : "'+playerID+'"}');
-    socket.send('{"type" : "ref_player", "messageUID" : "'+playerID+'"}');
+    socket.send('{"type" : "ref_player", "messageUID" : "'+playerID+'", "playerData":"'+playerData+'"}');
     playerData.push("player"+playerID);
     playerID++;
     console.log(playerData);
@@ -62,3 +62,7 @@ sok.on('connection', function (socket) {
 
     });
 });
+
+sok.on('disconnect', function(socket){
+  console.log('Кто то вышел');
+})
