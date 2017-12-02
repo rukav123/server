@@ -30,6 +30,7 @@ sok.on('connection', function (socket) {
     socket.send('{"type" : "click_message_local", "message" : "'+local_click+'"}');
     socket.send('{"type" : "click_message", "message" : "'+click+'"}');
     socket.broadcast.send('{"type" : "add_player", "messageID" : "'+playerID+'"}');
+    socket.send('{"type" : "ref_player", "messageUID" : "'+playerID+'"}');
     playerID++;
 
     socket.on('message', function(data){
