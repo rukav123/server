@@ -22,6 +22,7 @@ server.listen('3000', function () {
 
 var click = 0;
 var playerID = 1;
+var playerData = [];
 
 sok.on('connection', function (socket) {
     var local_click = 0;
@@ -31,7 +32,9 @@ sok.on('connection', function (socket) {
     socket.send('{"type" : "click_message", "message" : "'+click+'"}');
     socket.broadcast.send('{"type" : "add_player", "messageID" : "'+playerID+'"}');
     socket.send('{"type" : "ref_player", "messageUID" : "'+playerID+'"}');
+    playerData.push("player"+playerID);
     playerID++;
+    console.log(playerData);
 
     socket.on('message', function(data){
       var pred_msg = JSON.parse(data);
