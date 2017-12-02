@@ -64,7 +64,7 @@ sok.on('connection', function (socket) {
     });
     socket.on('disconnect', function(){
       console.log("player"+playerName);
-      playerData.splice((playerName-1),1);
+      delete playerData[(playerName-1)];
       console.log(playerData);
     });
 });
