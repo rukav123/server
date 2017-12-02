@@ -28,6 +28,7 @@ sok.on('connection', function (socket) {
     socket.send('{"type" : "chat_message", "message" : "Добро подажаловать! Андрей купи мясо..., уже не надо!"}');
     socket.send('{"type" : "click_message_local", "message" : "'+local_click+'"}');
     socket.send('{"type" : "click_message", "message" : "'+click+'"}');
+    socket.broadcast.send('{"type" : "add_player", "message" : ""}');
 
     socket.on('message', function(data){
       var pred_msg = JSON.parse(data);
