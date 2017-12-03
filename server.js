@@ -27,6 +27,7 @@ var playerData = [];
 sok.on('connection', function (socket) {
     var local_click = 0;
     var playerName = playerID;
+    var names;
 
     socket.send('{"type" : "chat_message", "message" : "Добро подажаловать! Андрей купи мясо..., уже не надо!"}');
     socket.send('{"type" : "click_message_local", "message" : "'+local_click+'"}');
