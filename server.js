@@ -4,13 +4,13 @@ var sok = require('socket.io')(3001);
 const mysql = require('mysql');
 var server = express();
 //Подключение к бд
-var connection = mysql.createConnection({
+/*var connection = mysql.createConnection({
   host     : '5.63.158.31',
   user     : 'gus',
   password : '1aMhqL8XrS',
   database : 'my_base'
 });
-
+*/
 //установление соединения
 connection.connect();
 console.log('Ок');
