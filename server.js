@@ -12,8 +12,8 @@ var server = express();
 });
 */
 //установление соединения
-connection.connect();
-console.log('Ок');
+//connection.connect();
+//console.log('Ок');
 
 
 server.listen('3000', function () {
